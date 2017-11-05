@@ -31,3 +31,30 @@ test('can fix a space at the beginning of a phrase', function (t) {
   guesser.guess()
 })
 
+test('can fix a misspelling', function (t) {
+  t.plan(1)
+
+  const input = 'travael funny ocean erupt crater whale mandate timber scatter scout actress elbow'
+  const expected = '0xf40762669ac55878e34691e6fc048e75518043c9'
+  const getBalance = async (addr) => {
+
+    if (addr.toLowerCase() === expected) {
+      return new BN(10000000000)
+    } else {
+      return new BN(0)
+    }
+  }
+
+  const guesser = new Guesser({ phrase: input, getBalance })
+
+  guesser.on('found', (result) => {
+    t.equal(result, phrase, 'found the correct phrase')
+  })
+
+  guesser.on('gave-up', () => {
+    t.fail('gave up')
+  })
+
+  guesser.guess()
+})
+

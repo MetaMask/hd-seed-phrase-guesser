@@ -22,6 +22,14 @@ class Guesser extends EventEmitter {
     .filter((word) => {
       return word !== ''
     })
+    .map((word) => {
+      const suggestions = dict.suggest(word)
+      if (suggestions.length === 1) {
+        return suggestions[0].word
+      } else {
+        return word
+      }
+    })
     .join(' ')
   }
 
@@ -32,7 +40,6 @@ class Guesser extends EventEmitter {
       return this.emit('found', this.result)
     }
 
-    console.log('trying with ' + this.phrase)
     const keyring = new HdKeyring({
       mnemonic: this.phrase,
       numberOfAccounts: this.depth,
