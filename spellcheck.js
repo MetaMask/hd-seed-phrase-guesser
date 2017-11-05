@@ -6,5 +6,5 @@ const dict = spell()
 
 dict.load(words.join(' '))
 
-console.log(dict.suggest('srader'))
+console.log(dict.suggest('scoter'))
 
