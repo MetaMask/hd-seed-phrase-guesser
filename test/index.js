@@ -54,10 +54,6 @@ test('can fix a misspelling', function (t) {
     t.equal(result, phrase, 'found the correct phrase')
   })
 
-  guesser.on('trying', (mnemonic) => {
-    console.log('trying: ' + mnemonic)
-  })
-
   guesser.on('gave-up', () => {
     t.fail('gave up')
   })
