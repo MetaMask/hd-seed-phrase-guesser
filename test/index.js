@@ -34,7 +34,7 @@ test('can fix a space at the beginning of a phrase', function (t) {
 test('can fix a misspelling', function (t) {
   t.plan(1)
 
-  const input = 'travael funny ocean erupt crater whale mandate timber scatter scout actress elbow'
+  const input = 'travel funny ocean erupt cra whale mandate timber scatter scout actress elbow'
   const expected = '0xf40762669ac55878e34691e6fc048e75518043c9'
   const getBalance = async (addr) => {
 

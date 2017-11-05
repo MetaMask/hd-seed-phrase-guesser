@@ -6,4 +6,5 @@ const dict = spell()
 
 dict.load(words.join(' '))
 
-console.log(dict.suggest('travel'))
+console.log(dict.suggest('cra'))
+
