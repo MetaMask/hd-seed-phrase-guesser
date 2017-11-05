@@ -10,3 +10,9 @@ A tool for attempting to recover Ethereum addresses from incorrectly input seed 
 - If an account with a balance is found, the valid mnemonic is returned.
 - The module is an event emitter for easy introspection into its attempt cycle.
 
+## Building the web interface
+
+One detail: You'll have to remove the line of `node_modules/spell/spell.js` that references `readFileSync`, since that is not available in browser.
+
+After you `npm install`, assuming you have browserify installed globally (`npm install browserify -g`) you should be able to build with `npm run build`.
+
