@@ -29,12 +29,15 @@ test('can fix a space at the beginning of a phrase', function (t) {
   })
 
   guesser.guess()
+  .catch((reason) => {
+    t.ifError(reason)
+  })
 })
 
 test('can fix a misspelling', function (t) {
   t.plan(1)
 
-  const input = 'travel funny ocean erupt cra whale mandate timber scatter scout actress elbow'
+  const input = 'travel funny ocean erupt srader whale mandate timber scatter scout actress elbow'
   const expected = '0xf40762669ac55878e34691e6fc048e75518043c9'
   const getBalance = async (addr) => {
 
@@ -51,10 +54,17 @@ test('can fix a misspelling', function (t) {
     t.equal(result, phrase, 'found the correct phrase')
   })
 
+  guesser.on('trying', (mnemonic) => {
+    console.log('trying: ' + mnemonic)
+  })
+
   guesser.on('gave-up', () => {
     t.fail('gave up')
   })
 
   guesser.guess()
+  .catch((reason) => {
+    t.ifError(reason)
+  })
 })
 
