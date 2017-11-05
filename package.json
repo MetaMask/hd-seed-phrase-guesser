@@ -4,7 +4,8 @@
   "description": "A tool for recovering ethereum accounts from mis-recorded seed phrases.",
   "main": "index.js",
   "scripts": {
-    "test": "node test"
+    "test": "node test",
+    "build": "browserify sample/index.js -o bundle.js"
   },
   "author": "Dan Finlay <dan@danfinlay.com>",
   "license": "ISC",
@@ -15,7 +16,32 @@
     "ethereumjs-wallet": "^0.6.0",
     "spell": "^1.0.0"
   },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015",
+            "stage-0"
+          ]
+        }
+      ],
+      "envify",
+      "brfs"
+    ]
+  },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^8.0.0",
+    "brfs": "^1.4.3",
+    "envify": "^4.1.0",
+    "ethjs": "^0.3.0",
+    "metamascara": "^2.1.0",
     "tape": "^4.8.0"
   },
   "repository": {
