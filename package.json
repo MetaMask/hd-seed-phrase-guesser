@@ -1,0 +1,37 @@
+{
+  "name": "hd-seed-phrase-guesser",
+  "version": "1.0.0",
+  "description": "A tool for recovering ethereum accounts from mis-recorded seed phrases.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "author": "Dan Finlay <dan@danfinlay.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bip39": "^2.4.0",
+    "eth-hd-keyring": "^1.2.1",
+    "ethereumjs-util": "^5.1.2",
+    "ethereumjs-wallet": "^0.6.0",
+    "spell": "^1.0.0"
+  },
+  "devDependencies": {
+    "tape": "^4.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danfinlay/hd-seed-phrase-guesser.git"
+  },
+  "keywords": [
+    "ethereum",
+    "hd",
+    "bip44",
+    "bip39",
+    "spelling",
+    "recovery"
+  ],
+  "bugs": {
+    "url": "https://github.com/danfinlay/hd-seed-phrase-guesser/issues"
+  },
+  "homepage": "https://github.com/danfinlay/hd-seed-phrase-guesser#readme"
+}
