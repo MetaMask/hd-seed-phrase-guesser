@@ -55,6 +55,8 @@ class Guesser extends EventEmitter {
 
     if (!mnemonic) {
       return this.emit('gave-up')
+    } else {
+      return mnemonic
     }
   }
 

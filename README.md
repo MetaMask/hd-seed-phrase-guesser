@@ -10,6 +10,36 @@ A tool for attempting to recover Ethereum addresses from incorrectly input seed 
 - If an account with a balance is found, the valid mnemonic is returned.
 - The module is an event emitter for easy introspection into its attempt cycle.
 
+## Usage
+
+```javascript
+const Guesser = require('hd-seed-phrase-guesser')
+const Eth = require('ethjs')
+const eth = new Eth(new Eth.HttpProvider('https://mainnet.infura.io'))
+
+const input = ' travel funny  ocean erupt srader whale mandate timber scoter escout actress elbow'
+const getBalance = eth.getBalance.bind(eth)
+
+const guesser = new Guesser({
+  phrase: input,
+  getBalance: getBalance,
+})
+
+guesser.guess()
+.then((mnemonic) => {
+  // Successful recovery!
+})
+.catch((reason) => {
+  // Failed to recover :()
+})
+
+// Track events!
+guesser.on('trying', (mnemonic) => {
+  // The guesser is checking balances on this mnemonic
+})
+
+```
+
 ## Building the web interface
 
 One detail: You'll have to remove the line of `node_modules/spell/spell.js` that references `readFileSync`, since that is not available in browser.

@@ -1,6 +1,6 @@
 {
   "name": "hd-seed-phrase-guesser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool for recovering ethereum accounts from mis-recorded seed phrases.",
   "main": "index.js",
   "scripts": {
