@@ -1,4 +1,4 @@
-# HD Seed Phrase Guesser
+# HD Seed Phrase Guesser [![CircleCI](https://circleci.com/gh/danfinlay/hd-seed-phrase-guesser.svg?style=svg)](https://circleci.com/gh/danfinlay/hd-seed-phrase-guesser)
 
 [Live Web Interface Here](https://danfinlay.github.io/hd-seed-phrase-guesser/)
 
