@@ -68411,7 +68411,6 @@ window.addEventListener('load', function () {
 
     guesser.on('found', function (result) {
       render('SUCCESS! Guesser found this phrase:<br>' + result);
-      t.equal(result, phrase, 'found the correct phrase');
     });
 
     guesser.on('gave-up', function () {
