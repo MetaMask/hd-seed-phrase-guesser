@@ -8,7 +8,7 @@ const Eth = require('ethjs')
 window.addEventListener('load', function () {
   console.log('loaded page')
 
-  render("Make sure you're connected to the network you lost funds on.")
+  render("Make sure your wallet is connected to the main Ethereum network.")
   const ethereumProvider = metamask.createDefaultProvider()
   const eth = new Eth(ethereumProvider)
 
